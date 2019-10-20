@@ -13,10 +13,14 @@
     <script type="text/babel">
         (() => {
 
+            function showMessage() {
+                alert('Hello');
+            }
+
             const name = 'okipo';
             ReactDOM.render(
-                <div>
-                    <p>Hello! {name.toUpperCase()}</p>
+                <div className="box">
+                    <p style={{width:100, height:50, backgroundColor:'tomato'}} onClick={showMessage}>Hello! {name.toUpperCase()}</p>
                     <hr/>
                     <p>World</p>
                 </div>,
