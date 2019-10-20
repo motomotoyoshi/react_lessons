@@ -9,6 +9,14 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
-    <script type="text/babel"></script>
+    <div id="root"></div>
+    <script type="text/babel">
+        (() => {
+            ReactDOM.render(
+                <p>Hello!</p>,
+                document.getElementById('root')
+            );
+        })();
+    </script>
 </body>
 </html>
