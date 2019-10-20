@@ -13,16 +13,15 @@
     <script type="text/babel">
         (() => {
 
-            function showMessage() {
-                alert('Hello');
+            function Counter(props) {
+                return <div>0 {props.color}</div>;
             }
-
-            const name = 'okipo';
+            
             ReactDOM.render(
-                <div className="box">
-                    <p style={{width:100, height:50, backgroundColor:'tomato'}} onClick={showMessage}>Hello! {name.toUpperCase()}</p>
-                    <hr/>
-                    <p>World</p>
+                <div>
+                    <Counter color="tomato"/>
+                    <Counter color="skyblue"/>
+                    <Counter color="limegreen"/>
                 </div>,
                 document.getElementById('root')
             );
