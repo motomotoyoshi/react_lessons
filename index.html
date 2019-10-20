@@ -16,7 +16,7 @@
             function Counter(props) {
                 return (
                     <li style={{backgroundColor:props.counter.color}} onClick={() => props.countUp(props.counter)}>
-                        {props.counter.id}:{props.counter.count}
+                        {props.counter.id}-({props.counter.count})
                     </li>
                 );
             }
@@ -43,7 +43,10 @@
                             {id: 'A', count: 0, color: 'tomato'},
                             {id: 'B', count: 0, color: 'skyblue'},
                             {id: 'C', count: 0, color: 'limegreen'},
-                        ]
+                            {id: 'D', count: 0, color: 'pink'},
+                            {id: 'E', count: 0, color: 'gold'},
+                        ],
+                        total: 0
                     };
                     this.countUp = this.countUp.bind(this);
                 }
@@ -55,7 +58,8 @@
                         const pos = counters.map(counter => counter.id).indexOf(counter.id);
                         counters[pos].count++;
                         return {
-                            counters: counters
+                            counters: counters,
+                            total: prevState.total + 1
                         };
                     });
                 }
@@ -66,7 +70,7 @@
                                 counters={this.state.counters}
                                 countUp={this.countUp}
                             />
-                            <div>TOTAL INVENTORY: 3</div>
+                            <div>TOTAL INVENTORY: {this.state.total}</div>
                         </div>
                     );
                 }
